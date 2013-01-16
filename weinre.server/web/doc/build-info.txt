@@ -1,0 +1,2 @@
+weinre build 2.0.0-pre-HAPIVMI1 by Your Name in Lights
+git: 19454cfe2cd3c4515f7fb615f35fa2c7b2565401 [CB-1494] weinre - Supports running server behind a proxy, such as Heroku Cedar
