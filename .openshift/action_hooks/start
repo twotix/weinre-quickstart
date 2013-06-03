@@ -2,13 +2,7 @@
 # The logic to start up your application should be put in this
 # script. The application will work only if it binds to
 
-IP=${OPENSHIFT_DIY_IP:-OPENSHIFT_INTERNAL_IP}
 PORT=${OPENSHIFT_DIY_PORT:-8080}
+LOG=$OPENSHIFT_DIY_LOG_DIR/server.log
 
-if [ -n "$OPENSHIFT_DIY_LOG_DIR" ]; then
-  LOG=$OPENSHIFT_DIY_LOG_DIR/server.log
-else
-  LOG=$OPENSHIFT_HOMEDIR/diy-0.1/logs/server.log
-fi
-
-nohup node $OPENSHIFT_REPO_DIR/weinre.server/weinre --httpPort $PORT --boundHost $IP > $LOG 2>&1 &
+nohup node $OPENSHIFT_REPO_DIR/weinre.server/weinre --httpPort $PORT --boundHost $OPENSHIFT_DIY_IP > $LOG 2>&1 &
